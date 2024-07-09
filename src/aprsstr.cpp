@@ -176,24 +176,3 @@ extern int aprsstr_mon2raw(const char *mon, char raw[], int raw_len)
    fprintf(stderr,"results in %s\n",raw);
    return p+2;
 } /* end mon2raw() */
-
-
-char b[251];
-//char raw[201];
-const char *destcall="APRRDZ";
-
-
-char *aprs_senddata() {
-   char* sonde_id = "A1234567";
-	*b=0;
-	aprsstr_append(b, "DO2JMG-11>APLWS2:;");
-
-   char tmp[10];
-	snprintf(tmp,10,"%s         ", sonde_id);
-	aprsstr_append(b, tmp);
-
-   aprsstr_append(b, "*220813h5044.60N/00506.73EO108/048/A=021480!wAS!Clb=3.7m/s p=428.6hPa t=-37.0C h=16.5% 402.998MHz Type=iMET");
-
-	return b;
-}
-
